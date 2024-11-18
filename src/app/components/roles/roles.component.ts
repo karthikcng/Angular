@@ -31,7 +31,7 @@ export class RolesComponent implements OnInit{
   // }
 
   getAllRoles() {
-    this.http.get<any>("http://4.172.42.105:8080/WeatherForecast")
+    this.http.get<any>("http://52.139.11.59:8080/WeatherForecast")
       .subscribe(
         (res) => {
           this.roleList = res; // Directly assign the response to roleList
