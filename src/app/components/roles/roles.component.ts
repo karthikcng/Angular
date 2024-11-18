@@ -21,12 +21,26 @@ export class RolesComponent implements OnInit{
     this.getAllRoles()
   }
 
-  getAllRoles(){
-    this.http.get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res:any)=>{
-      this.roleList = res.data;
+  
+  // getAllRoles(){
+  //   this.http.get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res:any)=>{
+  //     this.roleList = res.data;
 
-      })
+  //     })  
       
+  // }
+
+  getAllRoles() {
+    this.http.get<any>("https://testing20241112230329.azurewebsites.net/WeatherForecast")
+      .subscribe(
+        (res) => {
+          this.roleList = res; // Directly assign the response to roleList
+        },
+        (error) => {
+          console.error('Error fetching roles:', error);
+          // Optionally handle errors (e.g., show an error message to the user)
+        }
+      );
   }
 
 }
